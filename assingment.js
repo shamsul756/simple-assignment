@@ -15,4 +15,27 @@ let interviewCount = document.getElementById('interview-count');
 let rejectedCount = document.getElementById('rejected-count');
 
 // function count 
+function updateCounts() {
+    let total = jobCard.length;
+    let interview = 0;
+    let rejected = 0;
 
+// now i check marked
+
+jobCard.forEach(each=> {
+    if(card.querySelector(".interview-btn").style.display !== "none"){
+        if(card.dataset.status === 'interview'){
+            interview++;
+        }
+    }
+    if(card.querySelector(".rejected-btn").style.display !== "none"){
+        if(card.dataset.status === "rejected"){
+            rejected++;
+        }
+    }
+});
+totalCount.innerText = total;
+interviewCount.innerText = interview;
+rejectedCount.innerText = rejected;
+
+}
