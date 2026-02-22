@@ -55,3 +55,20 @@ function filterCards(status){
         }
     });
 }
+
+// now i add events filter buttons 
+allBtn.addEventListener("click", () => filterCards("all"));
+interviewBtn.addEventListener("click", () => filterCards("interview"));
+rejectedBtn.addEventListener("click", () => filterCards("rejected"));
+
+// now i play foreach 
+jobCard.forEach((card => {
+    let interviewBtnCard = card.querySelector(".interview-btn");
+    let rejectedBtnCard = card.querySelector(".rejected-btn");
+    let appliedBtn = card.querySelector("#applied-btn");
+     
+    //  default value is empty
+    card.dataset.status = "";
+
+})
+)
