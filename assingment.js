@@ -39,3 +39,19 @@ interviewCount.innerText = interview;
 rejectedCount.innerText = rejected;
 
 }
+
+// function based on filter 
+
+function filterCards(status){
+    jobCard.forEach(card=> {
+        if(status === "all"){
+            card.style.display = "block";
+        }
+        else if(card.dataset.status === status){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+    });
+}
