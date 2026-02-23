@@ -16,7 +16,7 @@ function updateUI(){
     let interview = 0;
     let rejected = 0;
     let visible = 0;
-//new
+
  cards.forEach (card =>{ 
 let status = card.dataset.status || "";
 if(status === "interview") interview++;
@@ -32,7 +32,7 @@ else{
 });
 
 
-//new
+
 // update dashboard
 document.getElementById("total-count").innerText = total;
 document.getElementById("interview-count").innerText = interview;
@@ -56,7 +56,7 @@ if(interviewBtn) {
         card.dataset.status = "interview";
         updateUI()
     };
-}//new
+}
 
 if(rejectedBtn){
     rejectedBtn.onclick = () => {
@@ -79,7 +79,7 @@ if(appliedBtn){
     };
 }
 
-});//new
+});
 updateUI();
 
 // khel kotom 
