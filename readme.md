@@ -1,0 +1,1 @@
+getElementById ()uses when we want to catch id ,it return a single element .
