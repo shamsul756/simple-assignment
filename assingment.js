@@ -1,74 +1,79 @@
-// first work go to js file then i catch all element .most importantly which are my need .
-// 1.all job card need.
-// 2.dashboard count need.
-// 3.tab button like all, interview , rejected
-// 4. interview and rejected button card inside element
-// get button
-let jobCard = document.querySelectorAll(".job-card");
-let allCard = document.getElementById('all-button');
-let interviewButton = document.getElementById('interview-button');
-let rejectedButton = document.getElementById('rejected-button');
+// Current selected tab
+let currentTab = "all";//new
+// buttons tab
+document.getElementById("all-button").onclick = () => changeTab ("all");
+document.getElementById ("interview-button").onclick = () => changeTab ("interview");
+document.getElementById("rejected-button").onclick = () => changeTab ("rejected");//new
 
-// get element 
-let totalCount = document.getElementById('total-count');
-let interviewCount = document.getElementById('interview-count');
-let rejectedCount = document.getElementById('rejected-count');
+function changeTab(tab){
+    currentTab = tab;
+    updateUI();
+}
 
-// function count 
-function updateCounts() {
-    let total = jobCard.length;
+function updateUI(){
+    let cards = document.querySelectorAll(".job-card");
+    let total = cards.length;
     let interview = 0;
     let rejected = 0;
+    let visible = 0;
+}//new
+cards.forEach (card =>{
+let status = card.dataset.status || "";
+if(status === "interview") interview++;
+if(status === 'rejected') rejected++;
+// filter
+if(currentTab === "all" || status === currentTab){
+    card.style.display = "block";
+    visible++;
+}
+else{
+    card.style.display = "none"
+}
+});//new
+// update dashboard
+document.getElementById("total-count").innerText = total;
+document.getElementById("interview-count").innerText = interview;
+document.getElementById("rejected-count").innerText = rejected;
+document.getElementById("job-count").innerText = visible + "jobs";
 
-// now i check marked
+// this are the most hard thing 
+// No data message
+document.getElementById("no-data").style.display = visible === 0 ? "flex" : "none";//new
 
-jobCard.forEach(each=> {
-    if(card.querySelector(".interview-btn").style.display !== "none"){
-        if(card.dataset.status === 'interview'){
-            interview++;
-        }
-    }
-    if(card.querySelector(".rejected-btn").style.display !== "none"){
-        if(card.dataset.status === "rejected"){
-            rejected++;
-        }
-    }
+document.querySelectorAll(".job-card").forEach(card => {
+    let interviewBtn = card.querySelector(".interview-btn");
+    let rejectedBtn = card.querySelector(".rejected-btn");
+    let appliedBtn = card.querySelector(".applied-btn");
+    let deleteBtn = card.querySelector(".delete-icon")
+//new
+
+if(interviewBtn) {
+    interviewBtn.onclick = () =>{
+        card.dataset.status = "interview";
+        updateUI()
+    };
+}//new
+
+
+
+
+
+
+
 });
-totalCount.innerText = total;
-interviewCount.innerText = interview;
-rejectedCount.innerText = rejected;
 
-}
 
-// function based on filter 
 
-function filterCards(status){
-    jobCard.forEach(card=> {
-        if(status === "all"){
-            card.style.display = "block";
-        }
-        else if(card.dataset.status === status){
-            card.style.display = "block";
-        }
-        else{
-            card.style.display = "none";
-        }
-    });
-}
 
-// now i add events filter buttons 
-allBtn.addEventListener("click", () => filterCards("all"));
-interviewBtn.addEventListener("click", () => filterCards("interview"));
-rejectedBtn.addEventListener("click", () => filterCards("rejected"));
 
-// now i play foreach 
-jobCard.forEach((card => {
-    let interviewBtnCard = card.querySelector(".interview-btn");
-    let rejectedBtnCard = card.querySelector(".rejected-btn");
-    let appliedBtn = card.querySelector("#applied-btn");
-     
-    //  default value is empty
-    card.dataset.status = "";
 
-})
-)
+
+
+
+
+
+
+
+
+
+
