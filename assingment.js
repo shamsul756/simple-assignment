@@ -10,14 +10,14 @@ function changeTab(tab){
     updateUI();
 }
 
-function updateUI(){
+function updateUI(){ 
     let cards = document.querySelectorAll(".job-card");
     let total = cards.length;
     let interview = 0;
     let rejected = 0;
     let visible = 0;
-}//new
-cards.forEach (card =>{
+//new
+ cards.forEach (card =>{ 
 let status = card.dataset.status || "";
 if(status === "interview") interview++;
 if(status === 'rejected') rejected++;
@@ -29,7 +29,10 @@ if(currentTab === "all" || status === currentTab){
 else{
     card.style.display = "none"
 }
-});//new
+});
+
+
+//new
 // update dashboard
 document.getElementById("total-count").innerText = total;
 document.getElementById("interview-count").innerText = interview;
@@ -39,7 +42,8 @@ document.getElementById("job-count").innerText = visible + "jobs";
 // this are the most hard thing 
 // No data message
 document.getElementById("no-data").style.display = visible === 0 ? "flex" : "none";//new
-
+ }
+// setup card
 document.querySelectorAll(".job-card").forEach(card => {
     let interviewBtn = card.querySelector(".interview-btn");
     let rejectedBtn = card.querySelector(".rejected-btn");
@@ -53,7 +57,14 @@ if(interviewBtn) {
         updateUI()
     };
 }//new
-check delterBtn
+
+if(rejectedBtn){
+    rejectedBtn.onclick = () => {
+        card.dataset.status = "rejected";
+        updateUI();
+    }
+}
+// check delterBtn
 if(deleteBtn){
     deleteBtn.onclick = () => {
         card.remove();
