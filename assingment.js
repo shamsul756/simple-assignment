@@ -46,31 +46,32 @@ document.querySelectorAll(".job-card").forEach(card => {
     let appliedBtn = card.querySelector(".applied-btn");
     let deleteBtn = card.querySelector(".delete-icon")
 //new
-
+// check interviewBtn 
 if(interviewBtn) {
     interviewBtn.onclick = () =>{
         card.dataset.status = "interview";
         updateUI()
     };
 }//new
+check delterBtn
+if(deleteBtn){
+    deleteBtn.onclick = () => {
+        card.remove();
+        updateUI();
+    };
+}
+// check applied btn 
+if(appliedBtn){
+    appliedBtn.onclick = () => {
+        appliedBtn.innerText = appliedBtn.innerText === "APPLIED" ? 
+         "NOT APPLIED" : "APPLIED";
+    };
+}
 
+});//new
+updateUI();
 
-
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
+// khel kotom 
 
 
 
