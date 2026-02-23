@@ -19,19 +19,19 @@
 
     <!-- start header part desing -->
     <header class="w-full md:w-11/12 mx-auto">
-        <h1 class=" text-3xl text-center md:text-5xl font-bold">Job Application Tracker</h1>
-        <div class="grid grid-cols-3 gap-5 m-5">
+        <h1 class=" text-4xl text-center mb-5 md:text-5xl font-bold">Job Application Tracker</h1>
+        <div class=" grid md:grid-cols-3 gap-5 m-5">
             <div class="bg-amber-300">
-                <p class="font-semibold text-4xl p-2 m-2">Total</p>
-                <p id="total-count" class="font-bold text-2xl p-2 m-2">0</p>
+                <p class="text-5xl font-bold md:font-semibold text-4xl p-2 m-2">Total</p>
+                <p id="total-count" class="text-4xl md:font-bold text-2xl p-2 m-2">0</p>
             </div>
             <div class="bg-green-300 ">
-                <p class="font-semibold text-4xl p-2 m-2">Interview</p>
-                <p id="interview-count" class="font-bold text-2xl p-2 m-2">0</p>
+                <p class="text-5xl font-bold md:font-semibold text-4xl p-2 m-2">Interview</p>
+                <p id="interview-count" class="text-4xl md:font-bold text-2xl p-2 m-2">0</p>
             </div>
             <div class="bg-pink-300">
-                <p class=" font-semibold text-4xl p-2 m-2">Rejected</p>
-                <p id="rejected-count" class="font-bold text-2xl p-2 m-2">0</p>
+                <p class="text-5xl font-bold md:font-semibold text-4xl p-2 m-2">Rejected</p>
+                <p id="rejected-count" class="text-4xl md:font-bold text-2xl p-2 m-2">0</p>
             </div>
         </div>
     </header>
@@ -44,17 +44,17 @@
 
         <section>
             <div class="flex justify-between">
-                <h1 class="font-bold text-3xl mb-3">Available Jobs</h1>
-                <p id="job-count" class="text-xl text-gray-600">jobs</p>
+                <h1 class="text-4xl font-bold md:font-bold text-3xl mb-3">Available Jobs</h1>
+                <p id="job-count" class="text-2xl font-semibold mb-5 md:text-xl text-gray-600">jobs</p>
             </div>
             <!-- main section button desing  -->
             <div class="flex gap-5 mb-5">
                 <button id="all-button"
-                    class="bg-gray-600 px-2 py-2 rounded-md font-semibold text-md text-white">All</button>
+                    class="bg-gray-800 md:bg-gray-600 px-2 py-2 rounded-md font-semibold text-md text-white">All</button>
                 <button id="interview-button"
-                    class="bg-gray-600 px-2 py-2 rounded-md font-semibold text-md text-white">Interview</button>
+                    class="bg-gray-800 md:bg-gray-600 px-2 py-2 rounded-md font-semibold text-md text-white">Interview</button>
                 <button id="rejected-button"
-                    class="bg-gray-600 px-2 py-2 rounded-md font-semibold text-md text-white">Rejected</button>
+                    class="bg-gray-800 md:bg-gray-600 px-2 py-2 rounded-md font-semibold text-md text-white">Rejected</button>
             </div>
             <!-- button desing complete -->
         </section>
@@ -71,10 +71,10 @@
 
 
                 <!-- 1st card start -->
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class=" w-[390px] pl-2  bg-gray-100  md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between">
                         <div>
-                            <h3 class="text-xl font-semibold">Mobile First Corp</h3>
+                            <h3 class=" text-xl font-semibold">Mobile First Corp</h3>
                             <p class="text-gray-500 pb-3">React Native Developer</p>
                         </div>
                         <!-- delete icon  -->
@@ -83,10 +83,10 @@
                     <p class="text-gray-500 pb-5">Remot • Full-time • $130,000 - $175,000</p>
                     <div>
                         <button id="applied-btn"
-                            class="bg-gray-200 px-2 py-2 rounded-md font-semibold text-md text-black mb-2">NOT
+                            class="bg-gray-300 md: bg-gray-200 px-2 py-2 rounded-md font-semibold text-md text-black mb-2">NOT
                             APPLIED</button>
                     </div>
-                    <p class="text-gray-600">Build cross-platform mobile applications using React Native. Work on
+                    <p class=" text-gray-600">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <div class="flex gap-5 mt-2">
 
@@ -99,7 +99,7 @@
 
                 <!-- 2nd card start  -->
 
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2 bg-gray-100 md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between ">
                         <div>
                             <h3 class="text-xl font-semibold">WebFlow Agency</h3>
@@ -130,7 +130,7 @@
                 </div>
 
                 <!-- 3rd card start -->
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2  bg-gray-100  md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between">
                         <div>
                             <h3 class="text-xl font-semibold">DataViz Solutions</h3>
@@ -162,7 +162,7 @@
                 </div>
                 <!-- 4th card -->
 
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2 bg-gray-100 md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between ">
                         <div>
                             <h3 class="text-xl font-semibold">CloudFirst Inc</h3>
@@ -193,7 +193,7 @@
                 </div>
                 <!-- 5th card -->
 
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2 bg-gray-100 md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between ">
                         <div>
                             <h3 class="text-xl font-semibold">Innovation Labs</h3>
@@ -225,7 +225,7 @@
 
                 <!-- 6th card -->
 
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2 bg-gray-100 md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between ">
                         <div>
                             <h3 class="text-xl font-semibold">MegaCorp Solutions</h3>
@@ -257,7 +257,7 @@
                 </div>
                 <!-- 7th card  -->
 
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2 bg-gray-100 md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between ">
                         <div>
                             <h3 class="text-xl font-semibold">StartupXYZ</h3>
@@ -288,7 +288,7 @@
                 </div>
 
                 <!-- 8th card -->
-                <div class="job-card bg-gray-50 p-5 mb-5 rounded-md">
+                <div class="w-[390px] pl-2 bg-gray-100 md: job-card bg-gray-50 p-5 mb-5 rounded-md">
                     <div class="flex justify-between ">
                         <div>
                             <h3 class="text-xl font-semibold">TechCorp Industries</h3>
